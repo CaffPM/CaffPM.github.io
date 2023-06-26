@@ -3,7 +3,7 @@
 <head>
   <title>Mobile Page with Embedded Video</title>
   <style>
-    body {
+      body {
       margin: 0;
       padding: 0;
     }
@@ -15,33 +15,26 @@
     }
 
     footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+      margin-top: 900px;
       padding: 20px;
       background-color: lightgray;
       text-align: center;
-      display: none; /* Початково приховуємо футер */
     }
 
     iframe {
       width: 320px;
       height: 257.5px;
     }
+
+    /* Збільшення розміру сторінки */
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      overflow-y: scroll; /* Додавання прокрутки */
+    }
   </style>
-  <script>
-    window.addEventListener('scroll', function() {
-      // Перевіряємо, чи прокручена веб-сторінка на висоту більше ніж 0
-      if (window.pageYOffset > 0) {
-        // Якщо так, то відображаємо футер
-        document.querySelector('footer').style.display = 'block';
-      } else {
-        // Якщо сторінка на верху, то ховаємо футер
-        document.querySelector('footer').style.display = 'none';
-      }
-    });
-  </script>
 </head>
 <body>
   <header>
@@ -49,12 +42,12 @@
   </header>
 
   <footer>
-    <div style="width: 720px; height: 480px">
-      <script
-        src="https://eu-central-1.stage.tvcoins.com/player/embed.js"
-        data="tenant1234/e722ee0c-f939-4848-b2ab-c55c1ec3d0f2&hide-app-store-buttons"
-      ></script>
-    </div>
+<div style="width: 720px; height: 480px">
+  <script
+    src="https://eu-central-1.stage.tvcoins.com/player/embed.js"
+    data="tenant1234/e722ee0c-f939-4848-b2ab-c55c1ec3d0f2&hide-app-store-buttons"
+  ></script>
+</div>
   </footer>
 </body>
 </html>
